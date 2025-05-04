@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Day 11 - Introduction to JavaScript</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Day 11 - Introduction to JavaScript</h1>
+  <p>Duration: 4 Hours</p>
+  <p><a href="day2.html">Day 2</a></p>
+</header>
+<div class="container">
+  <section>
+    <h2>Agenda</h2>
+    <ul>
+      <li>Introduction to JavaScript</li>
+      <li>JavaScript Placement: Inline, Internal, External</li>
+      <li>Variables: var, let, const</li>
+      <li>Data Types and Type Conversion</li>
+      <li>Live Code Demo: Variable Declarations</li>
+      <li>Task: Create a script to calculate simple interest</li>
+      <li>Interview Questions & Answers</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Introduction to JavaScript</h2>
+    <p>JavaScript (JS) is a powerful, dynamic programming language primarily used to create interactive effects within web browsers. It allows you to add functionality to your web pages.</p>
+    <ul>
+      <li>Client-side scripting language</li>
+      <li>Used for manipulating HTML and CSS</li>
+      <li>Supports event-driven, functional, and imperative programming styles</li>
+      <li>Runs on all modern web browsers without any setup</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>JavaScript Placement</h2>
+    <h3>1. Inline JavaScript</h3>
+    <p>JavaScript code can be written directly inside an HTML tag using the <code class="highlight">onclick</code> or other event attributes.</p>
+    <div class="code-block">
+// Example: Inline JavaScript
+&lt;button onclick="alert('Hello World!')"&gt;Click Me&lt;/button&gt;
+    </div>
+
+    <h3>2. Internal JavaScript</h3>
+    <p>Within a &lt;script&gt; tag inside the &lt;head&gt; or &lt;body&gt; sections of an HTML document.</p>
+    <div class="code-block">
+&lt;script&gt;
+  alert('Hello World!');
+&lt;/script&gt;
+    </div>
+
+    <h3>3. External JavaScript</h3>
+    <p>JavaScript code in a separate <code class="highlight">.js</code> file linked using the &lt;script src="..."&gt; tag.</p>
+    <div class="code-block">
+&lt;script src="myscript.js"&gt;&lt;/script&gt;
+    </div>
+    <p>Advantages of external JS:</p>
+    <ul>
+      <li>Code reuse across multiple pages</li>
+      <li>Cleaner HTML files</li>
+      <li>Easier to maintain</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Variables in JavaScript</h2>
+    <p>Used to store data values. JavaScript has three main ways to declare variables:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Declaration</th>
+          <th>Scope</th>
+          <th>Re-assignable?</th>
+          <th>Use Case</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>var</code></td>
+          <td>Function or globally scoped</td>
+          <td>Yes</td>
+          <td>Legacy code, avoid in modern projects</td>
+        </tr>
+        <tr>
+          <td><code>let</code></td>
+          <td>Block scoped</td>
+          <td>Yes</td>
+          <td>Preferred for variables that change value</td>
+        </tr>
+        <tr>
+          <td><code>const</code></td>
+          <td>Block scoped</td>
+          <td>No (constant reference)</td>
+          <td>Use for variables that should not change</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Example of variable declarations:</h3>
+    <div class="code-block">
+let name = 'Alice';<br>
+const PI = 3.14159;<br>
+var isOnline = true;
+    </div>
+  </section>
+
+  <section>
+    <h2>Data Types in JavaScript</h2>
+    <p>JavaScript supports several data types classified as follows:</p>
+    <ul>
+      <li><strong>Primitive Types:</strong>
+        <ul>
+          <li>String, Number, BigInt</li>
+          <li>Boolean</li>
+          <li>Undefined</li>
+          <li>Null</li>
+          <li>Symbol</li>
+        </ul>
+      </li>
+      <li><strong>Non-Primitive Types:</strong> Object, Array, Function</li>
+    </ul>
+
+    <h3>Type Conversion</h3>
+    <p>JavaScript automatically or manually converts between data types:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Conversion</th>
+          <th>Example</th>
+          <th>Result</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>String to Number</td>
+          <td><code>Number('123')</code></td>
+          <td><code>123</code> (number)</td>
+        </tr>
+        <tr>
+          <td>Number to String</td>
+          <td><code>(123).toString()</code></td>
+          <td><code>'123'</code> (string)</td>
+        </tr>
+        <tr>
+          <td>Boolean to Number</td>
+          <td><code>Number(true)</code></td>
+          <td><code>1</code></td>
+        </tr>
+        <tr>
+          <td>Implicit Conversion</td>
+          <td><code>'5' + 10</code></td>
+          <td><code>'510'</code> (string concatenation)</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Live Code Demo: Variable Declarations</h2>
+    <p>Try this code snippet in your browser console or any JavaScript environment:</p>
+    <div class="code-block">
+// Declaring variables
+var varVariable = 'I am var';
+let letVariable = 'I am let';
+const constVariable = 'I am const';
+
+// Trying to reassign variables
+varVariable = 'Var updated';
+letVariable = 'Let updated';
+// constVariable = 'Const updated'; // This will throw an error!
+
+console.log(varVariable);
+console.log(letVariable);
+console.log(constVariable);
+    </div>
+  </section>
+
+  <section>
+    <h2>Task: Calculate Simple Interest</h2>
+    <p>Simple Interest formula: <code>SI = (P × R × T) / 100</code></p>
+    <p>Create a JavaScript script that calculates simple interest given:</p>
+    <ul>
+      <li><strong>P</strong> - Principal amount (number)</li>
+      <li><strong>R</strong> - Rate of interest per annum (%)</li>
+      <li><strong>T</strong> - Time in years</li>
+    </ul>
+    <p>Example code:</p>
+    <div class="code-block">
+function calculateSimpleInterest(P, R, T) {
+  let SI = (P * R * T) / 100;
+  return SI;
+}
+
+// Example usage:
+let principal = 5000;
+let rate = 5;
+let time = 3;
+
+console.log("Simple Interest is:", calculateSimpleInterest(principal, rate, time));
+    </div>
+  </section>
+
+  <section>
+    <h2>Interview Questions & Answers</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Question</th>
+          <th>Answer</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>What are the different ways to declare a variable in JavaScript?</td>
+          <td>Using <code>var</code>, <code>let</code>, and <code>const</code>.</td>
+        </tr>
+        <tr>
+          <td>What is the difference between <code>var</code> and <code>let</code>?</td>
+          <td><code>var</code> is function-scoped and allows hoisting; <code>let</code> is block-scoped and not hoisted in the same way.</td>
+        </tr>
+        <tr>
+          <td>Can you reassign a <code>const</code> variable?</td>
+          <td>No, <code>const</code> variables cannot be reassigned, but objects assigned to const can have their properties changed.</td>
+        </tr>
+        <tr>
+          <td>What are primitive data types in JavaScript?</td>
+          <td>String, Number, BigInt, Boolean, Undefined, Null, Symbol.</td>
+        </tr>
+        <tr>
+          <td>Explain type coercion in JavaScript.</td>
+          <td>Automatic or implicit conversion of values from one data type to another, e.g., when adding a string and a number.</td>
+        </tr>
+        <tr>
+          <td>Where can you place JavaScript code in an HTML document?</td>
+          <td>Inline within HTML tags, inside internal &lt;script&gt; tags, or as an external file linked with &lt;script src&gt;.</td>
+        </tr>
+        <tr>
+          <td>What happens if you declare a variable without <code>var</code>, <code>let</code>, or <code>const</code>?</td>
+          <td>It becomes a global variable (in non-strict mode), which is generally a bad practice.</td>
+        </tr>
+        <tr>
+          <td>How do you convert a string to a number in JavaScript?</td>
+          <td>Using <code>Number(string)</code> or the unary plus operator <code>+string</code>.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Summary</h2>
+    <ul>
+      <li>JavaScript is the language of the web for interactive pages.</li>
+      <li>JS code can be placed inline, internally in &lt;script&gt; tags, or externally as separate files.</li>
+      <li>Variables declared using <code>var</code>, <code>let</code>, and <code>const</code> have different scopes and behaviors.</li>
+      <li>Understanding data types and type conversion helps avoid bugs.</li>
+      <li>Practiced a simple interest calculator script to apply JS basics.</li>
+    </ul>
+  </section>
+</div>
+</body>
+</html>
+

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Day 12 - JS Operators, Conditionals & Loops - Session</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <section>
+            <h1>Day 12 - JavaScript Operators, Conditionals & Loops</h1>
+            <p >Duration: 4 Hours</p>
+            <p><a href="day3.html">Day 3</a></p>
+          </section>
+    </header>
+<div class="container">
+    
+      
+      <section>
+        <h2>Agenda</h2>
+        <ul>
+          <li>🔹 Operators & Expressions</li>
+          <li>🔹 Conditional Statements (if, switch)</li>
+          <li>🔹 Loops (for, while, do-while)</li>
+          <li>✅ Code demo: Number Guessing Game</li>
+          <li>✅ Task: Write a script to find factorial of a number</li>
+        </ul>
+      </section>
+      
+      <section>
+        <h2>Operators & Expressions</h2>
+        <p>Operators perform operations on values to form expressions:</p>
+        <ul>
+          <li><strong>Arithmetic:</strong> +, -, *, /, %, ++, --</li>
+          <li><strong>Assignment:</strong> =, +=, -=, *=, /=</li>
+          <li><strong>Comparison:</strong> ==, ===, !=, !==, &lt;, &gt;, &lt;=, &gt;=</li>
+          <li><strong>Logical:</strong> && (AND), || (OR), ! (NOT)</li>
+        </ul>
+        <div class="code-demo">
+      // Example:
+      let x = 5;
+      let y = 10;
+      let sum = x + y; // 15
+      let isEqual = (x == y); // false
+        </div>
+      </section>
+      
+      <section>
+        <h2>Conditional Statements</h2>
+        <h3>if statement</h3>
+        <pre>if (condition) {
+        // code if condition true
+      } else {
+        // code if condition false
+      }</pre>
+        <h3>switch statement</h3>
+        <pre>switch(expression) {
+        case value1:
+          // code
+          break;
+        case value2:
+          // code
+          break;
+        default:
+          // code
+      }</pre>
+      </section>
+      
+      <section>
+        <h2>Loops in JavaScript</h2>
+        <h3>for loop</h3>
+        <pre>for (let i = 0; i &lt; 5; i++) {
+        console.log(i);
+      }</pre>
+        <h3>while loop</h3>
+        <pre>let i = 0;
+      while (i &lt; 5) {
+        console.log(i);
+        i++;
+      }</pre>
+        <h3>do-while loop</h3>
+        <pre>let i = 0;
+      do {
+        console.log(i);
+        i++;
+      } while (i &lt; 5);</pre>
+      </section>
+      
+      <section>
+        <h2>Code Demo: Number Guessing Game</h2>
+        <p>Enter a number between 1 and 10 and check if it matches the secret number.</p>
+        <div class="code-demo">
+      let secretNumber = Math.floor(Math.random() * 10) + 1;<br>
+      let guess = prompt("Guess a number between 1 and 10:");<br>
+      guess = Number(guess);<br><br>
+      if (guess === secretNumber) {<br>
+      &nbsp;&nbsp;alert("Congratulations! You guessed it right.");<br>
+      } else {<br>
+      &nbsp;&nbsp;alert("Wrong guess! The number was " + secretNumber);<br>
+      }
+        </div>
+      </section>
+      
+      <section>
+        <h2>Task: Find Factorial of a Number</h2>
+        <p>The factorial of a number <em>n</em> (n!) is the product of all positive integers up to n.</p>
+        <p><code>0! = 1</code> by definition.</p>
+        <div class="code-demo">
+      function factorial(n) {<br>
+      &nbsp;&nbsp;let result = 1;<br>
+      &nbsp;&nbsp;for (let i = 1; i &lt;= n; i++) {<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;result *= i;<br>
+      &nbsp;&nbsp;}<br>
+      &nbsp;&nbsp;return result;<br>
+      }<br><br>
+      // Example usage:<br>
+      console.log("5! =", factorial(5)); // Output: 120
+        </div>
+      </section>
+      
+      <section>
+        <h2>Session Goals</h2>
+        <ul>
+          <li>🟢 Understand and use operators in JavaScript expressions</li>
+          <li>🟢 Implement conditional logic using <code>if</code> and <code>switch</code> statements</li>
+          <li>🟢 Use <code>for</code>, <code>while</code>, and <code>do-while</code> loops effectively</li>
+          <li>🟢 Build simple interactive programs like the number guessing game</li>
+          <li>🟢 Solve problems involving loops and conditionals — e.g., factorial calculation</li>
+        </ul>
+      </section>
+      
+      
+</div>
+</body>
+</html>
+
